@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM manipulation part Two</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        #loader {
+            height: 100px;
+            background: url("img/image.gif");
+            background-position: center;
+            background-size: cover;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="row mt-5">
+    <div class="col-1">
+        <h1 id="display">01</h1>
+    </div>
+    <div id="loader" class="col-2">
+
+    </div>
+</div>
+<button id="btn1" class="btn btn-primary">Start</button>
+<button id="btn2" class="btn btn-danger">Stop</button>
+
+<script>
+    let count=0; //global variables
+    let id;//global variables
+    document.getElementById("btn1").addEventListener("click", function () {
+        //get the loader and set visible
+        let loader = document.getElementById("loader");
+        loader.style.display = "block";// visible
+
+        //wait some time and then hide the loader
+        setTimeout(function (){
+            loader.style.display = "none";// hide
+
+            //start to increment the number
+            //catch the number
+            let number=document.getElementById("display");//local variable
+
+            //if the button is pressed twice then previous
+            //timer id will be dismissed, so we have to clear previois
+            //timer before starting a new one
+            clearInterval(id);
+             id=setInterval(function(){
+                 count++; //increment the global variable
+                number.innerText=count; //set the number to display
+
+            },200);
+
+        },3000);
+    });
+
+    //function the stop button
+    document.getElementById("btn2").addEventListener("click",function(){
+        //stop the timer which we have set for increment the number
+        clearInterval(id);
+        count=0; // reset the count
+    });
+
+</script>
+</body>
+</html>

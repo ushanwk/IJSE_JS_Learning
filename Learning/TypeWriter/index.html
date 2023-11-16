@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Type Writer</title>
+</head>
+
+<body>
+
+<h1 id="text"></h1>
+
+</body>
+
+
+<script>
+
+    let names = ["Ushan", "GDSE", "IJSE"];
+
+    let tag = document.getElementById("text");
+    let text = tag.innerText;
+
+    var nameCount = 0;
+    var count = 0;
+
+    setInterval(function () {
+        try {
+            count++;
+            if (nameCount==3)nameCount=0;
+            tag.innerText = names[nameCount].substring(0, count);
+
+            if (count == names[nameCount].length) {
+                console.log(count);
+
+                if ((names.length) === nameCount) {
+                    namecount = 0;
+                } else {
+                    nameCount++;//1
+                }
+
+                count = 0;
+            }
+        } catch (t) {
+
+        }
+
+
+    }, 500);
+
+</script>
+
+</html>

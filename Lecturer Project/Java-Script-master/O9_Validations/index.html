@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validation with JS</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Validations with JS</h1>
+<p>Usage of RegEx Literals</p>
+
+
+<script src="assets/jquery-3.7.0.min.js"></script>
+<script>
+
+    // so for validations we can use regex literals
+    let regEx=/[a-z]{2}/; // this is how to put a regular expression
+    console.log(typeof regEx)// objects
+
+    //Regular Expressions are treat as objects in JS
+
+    // by using test method we can test that a string
+    //is matching or not with the regex
+    regEx.test("aa");//this will return a true
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Events</title>
+</head>
+<body>
+<h1>There are two types of events in JS</h1>
+<ul>
+    <li onclick="a()">Global Events</li>
+    <li onmouseenter="mouseEntered()">Specified Events</li>
+    <!--An event which is bounded through an attribute  of the element is called as a Global Events  -->
+</ul>
+<button onclick="a()" id="btn">Click</button>
+</body>
+<script>
+    //Specified Events
+   // let btn= document.getElementById("btn");
+   // btn.addEventListener("click",function(){
+   //     alert("Btn Event Working");
+   // });
+
+    function a() {
+        alert('dd');
+    }
+
+    function mouseEntered(){
+        console.log("Mouse is Entered");
+    }
+</script>
+</html>

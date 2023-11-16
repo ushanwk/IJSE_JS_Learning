@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Variables</title>
+</head>
+<body>
+<h1>JS Variables</h1>
+
+<script>
+
+  //Java Variables (Strong type language)
+  //String name="Iman";
+  //int age =100;
+
+  //How to do it in JS? (Loose Type)
+  //There is no dataType for the name variable
+  //So what is var.? var is a declaration which
+  //mean name is a variable. var is not a data type
+
+  // var name ="Iman"; (var means variables short version they are know as declaration types in JS)
+  // var age=10;
+
+
+  // So what is Dynamic Typing
+  // var address="Galle";
+  // typeof address;//String
+
+  // address=100;
+  // typeof address;//Number
+
+  // so here the type of variable address change dynamically
+  //according to the assigned value, that's why js is known as
+  //dynamic typing language
+
+  //So what are the other special things about JS variables with var.?
+
+  //01. You can duplicate same variable name (No errors)
+  // var name="Dasun";
+  // var name="Ushan";
+  // console.log(name);// this will print ushan without any error
+
+  // 02. var variables are not concerning about the scope
+  // {
+  //   var myAge=100;
+  // }
+  // console.log(myAge);// this will print 100. because var variables
+  //are not concerning about the scope
+
+  //03. You can use a variable before declaring it (Variable Hoisting)
+  // console.log(x);// this is not an error because of the hoisting feature
+  //but here x is not printing 100; it only let you to run the code
+  //without the error
+  // var x=100; // initialize x to 100
+  // console.log(x); // here it will print 100
+
+
+  //So are there any other ways to create variables in JS.?
+  // let myName="Iman";
+  // let myName="Ushan";
+
+  //So what about this.? is it also like var.?
+  //can we duplicate same variable name .?
+  //let myName="Iman";
+  //let myName="Ushan";// error// we can't duplicate same identifier here
+
+  //Scope satisfaction?
+  // {
+  //     let hide="DDD";
+  //     console.log(hide)
+  // }
+  // console.log(hide); // error let variables think about scope
+
+  //Hoisting.?
+  // console.log(x); // error // let is not supporting hoisting also
+  // let x=100;
+
+  // what about dynamic typing and loose typing with let .?
+  // let a=10;
+  // a=true; // no issue
+
+
+  // Are there any other ways of declaring variables than var and let
+  //yes we have const.?
+  //const - READ ONLY VALUES
+
+  //const NAME="Sadun Kumara";
+  //console.log(NAME);
+
+  //Variable Name Duplication.?
+  // const NAME="Sadun Kumara";// error
+
+  //Scope Satisfaction?
+  // {
+  //     const AGE=10;
+  // }
+  // console.log(AGE);// error (Scope satisfied)
+
+  //Hoisting
+  // console.log(AGE); // error: variable hoisting is not supproting
+  // const AGE=10;
+
+  //Loose typing
+ // const COLORS="RED";
+ // console.log(typeof COLORS); // support
+
+  //Dynamic Typing
+  //COLORS=10;// error (its a read only value. once you defined it
+  //you can't change it again'// )
+
+  //Values Initialization
+  //var a; // no issue we can later assign values
+  //let b; // no issue we can later assign values
+  //const C; // error (const variables must be initialized where they created)
+
+
+  //So what are the other things that we should know about variables.?
+
+
+  //Variable Names
+  //Case sensitive.?
+  // let ijse="Institute of Software Engineering";
+  // let IJSE="IJSE";
+  // console.log(ijse);
+  // console.log(IJSE);
+
+  //Valid Identifier name.?
+  //a-z or $ or _ can use for the first letter
+  //let _myFirstName="Dasun";
+  //console.log(_myFirstName);
+
+</script>
+</body>
+</html>

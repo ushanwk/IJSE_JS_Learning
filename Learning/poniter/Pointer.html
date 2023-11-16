@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pointer</title>
+</head>
+
+<body style="position: relative">
+
+  <h4 id="text" style="position: absolute">Institute of SE</h4>
+
+  <script src="code.jquery.com_jquery-3.7.0.min.js"></script>
+
+  <script>
+
+    window.addEventListener('mousemove', function(e) {
+
+
+        let text = document.getElementById('text');
+        let left = e.pageX;
+        let top = e.pageY;
+        text.style.left = left - 50 + 'px';
+        text.style.top = top - 50 + 'px';
+
+
+        setTimeout(function(){
+            text.style.opacity = '0';
+        },4000)
+
+        text.style.opacity = '1';
+
+
+    });
+
+    var text = document.getElementById("text").innerText;
+    var bigtext = document.getElementById("text");
+
+    var count = 0;
+
+    setInterval(function () {
+
+       bigtext.innerText = text.substring(0, count);
+
+       count++;
+
+       if(count == text.length+1){
+           count = 0;
+       }
+
+    }, 200);
+
+  </script>
+
+</body>
+
+</html>

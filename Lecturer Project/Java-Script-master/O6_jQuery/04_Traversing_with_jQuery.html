@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traversing with Jquery</title>
+</head>
+<body>
+<h1>Traversing Methods in Jquery</h1>
+<ul>
+  <li>children()</li>
+  <li>children(':nth-child(1)')</li>
+  <li>children(':eq(1)')</li>
+  <li>find()</li>
+  <li>get()</li>
+  <li>parent()</li>
+  <li>parents()</li>
+  <li>eq()</li>
+</ul>
+
+<main>
+    <h1>Inside Parent</h1>
+    <section id="innerSection">
+        <p id="c1">Content One</p>
+        <p id="c2">Content Two</p>
+        <ul>
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+        </ul>
+    </section>
+</main>
+
+<script src="assets/js/jquery-3.7.0.min.js"></script>
+<script>
+
+    $("main").children();
+    // return all the  child elements of the mains root
+
+    $("main").children().children();// can call this recursively
+    //will return children of main>child>child
+
+    //what about narrowing down children
+    $("main").children('h1');
+    //will search for h1 as a direct child of main
+
+    $("main").children(':nth-child(1)');
+    //we can also use pseudo classes too
+
+    $("main").children(':eq(0)');
+    //will return the first child of main
+
+    //how to get the parent
+    $('main').parent();
+    //will return the nearest parent of the main
+
+    $('main').parents();
+    //will return the all the parent hierarchy of main element
+    //in to an order
+
+    $('main').find('p').remove();
+    //will search for paragraphs inside the main
+    //not required to be direct children of main
+
+    $('main').eq(0);// jQuery Object will return
+    $('main').eq(0).children("h1");
+    //this is totally fine because eq() method
+    //will return a jQuery object
+
+    $('main').get(0); //Dom element
+    //you can't call jQuery methods after this methods
+    // $('main').get(0).children();//error
+    $('main').get(0).innerText;// this is also
+    //ok because get return a DOM object so
+    //innerText is all about Native JS property
+
+
+
+
+</script>
+</body>
+</html>

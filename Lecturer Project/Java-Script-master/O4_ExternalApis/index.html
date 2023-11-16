@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timers</title>
+</head>
+<body>
+<h1>Single Thread Management in Browsers</h1>
+<p>In Browsers we are not allowed to access more than one thread. So if we wanted to
+run multiple process at the same time we have to use External APIS</p>
+<h2>What are these external APIS.? Let's talk about it in future</h2>
+<br>
+
+<h1>But here we have inbuilt functionality which we can use for time waiting</h1>
+<p>They are integrated with the core library</p>
+<h1>Timers in JS</h1>
+<p>We have two timers</p>
+<ul>
+    <li>Set TimeOut</li>
+    <li>Set Interval</li>
+</ul>
+
+<script>
+    //In JS we don't have access to the threads
+    // We are only allowed to access one thread
+    // But if we wanted to wait something before calling or
+    //if we want to invoke a method repetitively then we have to use a
+    //external api for that
+    //So we have timers for that. timers are external apis which was
+    //integrated to the browser for time-consuming processes
+
+    //we have two timers
+    //setTimeout -> runs only ones after completing the time
+    var sid=setTimeout(function () {
+        console.log("Hello there how are you.?")
+    }, 20000);
+
+    clearTimeout(sid);// we can stop setTimeout at any point by calling this method
+    //and passing the timerID
+
+
+    //set interval -> runs repetitively after completing a one round of waiting time
+    let c = 0;
+   var id= setInterval(function () {
+        c++;
+        console.log(c);
+    }, 1000);
+
+   clearInterval(id);// stop the set Interval
+</script>
+</body>
+</html>

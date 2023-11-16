@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Flow Control Structures</title>
+</head>
+<body>
+<h1>JS Flow Control Structures</h1>
+
+<script>
+
+    //Java Flow Controlling Options
+    //01. if / else if
+    //02. switch
+    //03. ternary operator
+
+    //If condition
+    let condition = false;
+    if (condition) {
+        console.log("Condition is True")
+    } else {
+        console.log("Condition is False");
+    }
+
+    //Else If
+    let option = "kamal";
+    if (option == "IJSE") {
+        console.log("IJSE");
+    } else if (option == "ramal") {
+        console.log("RAMAL");
+    }else if(option == "kamal"){
+        console.log("Kamal");
+    }
+
+    //switch case
+    let source="C";
+    switch (source){
+        case "A":
+            console.log("A");
+            break;
+        case "B":
+            console.log("B");
+            break;
+        default:
+            console.log("NO NO NO");
+    }
+
+
+    //Ternary Operator
+    let solution= (10>20)? 100:200;
+    console.log(solution);
+
+
+</script>
+</body>
+</html>

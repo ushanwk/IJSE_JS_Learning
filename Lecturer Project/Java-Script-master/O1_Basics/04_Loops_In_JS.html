@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loops</title>
+</head>
+<body>
+<h1>Loops In JS</h1>
+<p>what are the ways of iterating contents on JS</p>
+<ul>
+    <li>For Loop</li>
+    <li>While Loop</li>
+    <li>Do While Loop</li>
+    <li>For Each</li>
+    <li>For In</li>
+    <li>For Of</li>
+</ul>
+<script>
+  //Java Loops
+  //For
+  //While
+  //Do-While
+  //For-Each
+
+  //So here we can use the same loops we already used in java
+
+  //For loop
+  // for (let i = 0; i < 10; i++) {
+  //   console.log(i)
+  // }
+
+  //While Loop
+  // let a=0;
+  // while(a<10){
+  //   console.log(a);
+  //   a++;
+  // }
+
+  //Do- While
+  // let s=0;
+  // do{
+  //   console.log(s);
+  //   s++;
+  // }while (s<50);
+
+
+  //Usage of loops with arrays
+  var names=["Dasun","Iman","Ushan","Chathushka","Daniel"];
+
+  //for loop usage for getting values out of the array
+  // for (let i = 0; i < names.length; i++) { // for loop
+  //     console.log(names[i]);
+  // }
+
+  //for in loop (can get the index numbers of an array)
+  // for(var i in names){ //for in
+  //    // console.log(i);//index number of the array values
+  //     console.log( i,names[i]);
+  // }
+  //
+
+  //for of loop (can get the values of the array)
+  // for(var i of names){ //for of
+  //     console.log(i);// I refer values of the list
+  // }
+
+  //for each call back function
+  //js for each function
+  //in here the for each function will call back until the last value of the
+  //names array.
+  names.forEach(function (v){
+      console.log(v);
+  });
+
+
+
+</script>
+</body>
+</html>

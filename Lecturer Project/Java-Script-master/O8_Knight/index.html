@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap-reboot.min.css">
+    <title>Knight</title>
+    <style>
+
+
+        section {
+            width: 90%;
+            height: 100px;
+            border: 1px solid black;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+        }
+
+        section > div {
+            flex-grow: 1;
+            height: 100%;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /*section > div:nth-child(1) {*/
+        /*    background: red;*/
+        /*}*/
+
+        /*section > div:nth-child(2) {*/
+        /*    background: #f93e3e;*/
+        /*}*/
+
+        /*section > div:nth-child(3) {*/
+        /*    background: #f93e3ed9;*/
+        /*}*/
+
+        /*section > div:nth-child(4) {*/
+        /*    background: #eb6969d9;*/
+        /*}*/
+
+        /*section > div:nth-child(5) {*/
+        /*    background: #e29c9c;*/
+        /*}*/
+
+        /*section > div:nth-child(6) {*/
+        /*    background: #deb9b9;*/
+        /*}*/
+
+        /*section > div:nth-child(7) {*/
+        /*    background: #e2d7d7;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+
+<section id="mainSec">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+<audio id="player" src="assets/sounds/Kitt%20Scanner.mp3"></audio>
+<audio id="player2" src="assets/sounds/Knight-Rider-Theme-Song.mp3" loop></audio>
+
+<script>
+    let mainRight = ['white', 'white', 'white', 'white', 'white', 'white', "white", "red", "#f93e3e", "#f93e3ed9", "#eb6969d9", "#e29c9c", "#deb9b9", "#e2d7d7"];
+    let runRight = mainRight.concat();
+    let mainLeft = ['white', 'white', 'white', 'white', 'white', 'white', "white", "#e2d7d7", "#deb9b9", "#e29c9c", "#eb6969d9", "#f93e3ed9", "#f93e3e", "red"];
+    let runLeft = mainLeft.concat();
+    let main = document.getElementById("mainSec");
+    let player = document.getElementById("player");
+    let player2 = document.getElementById("player2");
+    let div = main.children;
+    let rightCount = 0;
+    let leftCount = 0;
+    setTimeout(goRight,1000);
+
+    document.addEventListener('load', () => {
+       let h1= document.createElement("h1");
+       h1.textContent="Knght";
+       document.querySelector("body").appendChild(h1);
+    });
+    function goRight() {
+        player.play();
+        player2.play();
+        let id = setInterval(function () {
+            rightCount++;
+            for (let i = 0; i < div.length; i++) {
+                div[i].style.background = runRight[i];
+            }
+            let fv = runRight.shift();
+            runRight.push(fv);
+            if (rightCount == (runRight.length * 1) + 1) {
+                clearInterval(id);
+                rightCount=0;
+                runRight=mainRight.concat();
+                goLeft();
+            }
+        }, 40)
+    }
+
+    function goLeft() {
+       let id= setInterval(function (){
+           leftCount++;
+            for (let i = 0; i < div.length; i++) {
+                div[i].style.background = runLeft[i];
+            }
+            let lv = runLeft.pop();
+           runLeft.unshift(lv);
+            if (leftCount==(runLeft.length)+1){
+                clearInterval(id);
+                leftCount=0;
+                runLeft=mainLeft.concat();
+                setTimeout(function (){
+                    goRight();
+                },3000)
+
+            }
+        },40)
+    }
+
+    // setInterval(goLeft,100);
+
+</script>
+</body>
+</html>

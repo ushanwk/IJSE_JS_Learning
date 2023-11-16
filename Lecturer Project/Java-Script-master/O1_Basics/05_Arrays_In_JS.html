@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+</head>
+<body>
+<h1>Arrays in JS</h1>
+<p>There are several ways to store a collection of values in JS</p>
+<p>We can create array with several ways in JS</p>
+<ul>
+    <li>Literal Base Arrays</li>
+    <li>Constructor Base Arrays</li>
+</ul>
+
+<script>
+    //literal base array
+    // let colors=["red","green","orange","pink"];
+
+    //function base array or constructor base
+    // let newColors=new Array("green","pink");
+
+
+    //how to get values from an array.
+    //We can get array values using index number
+    // let firstColors=colors[0];
+    // let secondColor=colors[1];
+    // console.log(firstColors);
+    // console.log(secondColor);
+    //array related methods
+    // colors.push();
+    // colors.pop();
+    // colors.shift();
+    // colors.unshift();
+    // colors.slice();
+    // colors.splice();
+    // colors.length;
+    // colors.indexOf();
+    // colors.reverse();
+    // colors.sort();
+
+
+    let myArray = ["A", "B", "C", "D", "E", "F", "G", "H"];
+
+    //how to get the length of an array
+    myArray.length; //8
+
+    //add a value to the last index of an array
+    myArray.push("K"); // will add K to the end of the array
+
+    //remove the last index value of an array
+    myArray.pop();//will remove K (Last index value)
+
+    //remove the first index value of an array
+    myArray.shift();// will remove A
+
+    //add a value to the first index of the array
+    myArray.unshift("A");//will add A to the first index
+
+    //you can get a slice of existing array by using the
+    //index number range 2 (start) 4 (end)
+    myArray.slice(2, 4);//return an array
+
+    //you can remove any value or values using this method
+    myArray.splice(2, 2); //first param is for deleting index number
+    //second param is for delete count, which means how many values
+    //you want to delete from the given index
+
+    //by using this we can reverse the order of an array values
+    myArray.reverse();
+
+    //will search the given value in the array and will return the
+    //index number of the value
+    //if the value is not available it will return -1
+    myArray.indexOf("A");
+
+    //we can sort an array to an order by using this method
+    myArray.sort();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Events</title>
+</head>
+<body>
+<button class="btn btn-danger" id="btn1">Test</button>
+
+<script src="assets/js/jquery-3.7.0.min.js"></script>
+<script>
+    //Formalized events
+    //
+    // $("#btn1").click(function(event){
+    //     alert("Done");
+    //     console.log(event);
+    // });
+
+    // $("#btn1").dblclick(function(){
+    //     alert("Done");
+    //     console.log(event);
+    // });
+    // document.getElementById("btn1").addEventListener("dblclick",function (){
+    //
+    // })
+
+//jQuery Formalized events
+    //which means mostly using events in JS.
+    // to simplify the development process jQuery has
+    //developed some methods to access the events in a formalized manner.
+    //so they are introduced as formalize events
+
+    // click(function)
+    // dblclick(function)
+    // focus(function)
+    // blur(function)
+    // keydown(function)
+    // keyup(function)
+    // keypress(function)
+    // mousedown(function)
+    // mouseup(function)
+    // mousemove(function)
+
+    //so what about other events.? how to write them in jQuery.?
+    //this is how to bind events for non-formalized events
+    //on() -> first parameter is for event type
+    //second parameter is for event
+    $("#btn1").on("click",function () {
+        alert("DD");
+    });
+
+    //and also we can unbind a method too
+    //off(); by using this we can unbind all click
+    //events from the btn
+    $("#btn1").off("click");
+
+
+
+</script>
+</body>
+</html>

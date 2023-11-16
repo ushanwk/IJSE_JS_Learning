@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<h1 class="display">Hello There How Are You.?</h1>
+<input id="txtOne" name="txtContent" type="text" placeholder="Input Something You Like" class="form-control w-25">
+<button id="btn1" class="btn btn-danger mt-1">Change Text</button>
+
+<h1 id="color" class="mt-5">Change My Colors</h1>
+
+<img id="imageOne" src="https://ijse.lk/images/logos/ijse.png" class="w-25 mt-5" alt="My Image">
+<input type="text" id="txtUrl" placeholder="" class="form-control w-25">
+<button id="btn2" class="btn btn-danger mt-1 mb-5">Set Image</button>
+
+<input type="text" id="txtTask" placeholder="Add Task" class="form-control w-25">
+<button id="btn3" class="btn btn-danger mt-1">Set Task</button>
+<ol id="orderedList">
+    <li>Task One</li>
+</ol>
+
+<script src="assets/js/jquery-3.7.0.min.js"></script>
+<script>
+
+
+    // select h1 and get its text
+    $(".display").text();
+    //$().text(); // get
+    //$().text("SET"); //set
+
+    //select input field and get its text
+    $("#txtOne").val();
+    //$().val();//get
+    //$().val("DDD");//set
+
+    //select input filed and change its text
+    $("#txtOne").val("GDSE");
+
+    // Task One
+
+    $("#btn1").click(function(){
+        let typedValue=$("#txtOne").val();
+        $(".display").text(typedValue) ;
+    });
+
+
+
+    //second task
+    let globCount=1; //global variable
+
+
+    //$().click(function(){});
+    $("#color").click(function(){
+        if (globCount==1){
+            $("#color").css('color','red');
+            globCount++;
+        }else{
+            //if the h1 is clicked for the second time
+            $("#color").css('color','green');
+            globCount=1;
+        }
+    });
+
+
+    //task three
+    $("#btn2").click(function(){
+        let typedPath=$("#txtUrl").val();
+        // $("#imageOne").attr("src");// will return the src value
+        $("#imageOne").attr("src",typedPath);
+    });
+
+
+    //Task four
+    $("#btn3").click(function(){
+        //get the input task value from the text field
+        let txtValue =$("#txtTask").val();
+        //then add it as a list item
+        //<li>Task Two</li>
+        let list="<li>"+txtValue+"</li>";
+
+        //add to the OrderedList
+        $("#orderedList").append(list);
+    });
+
+
+</script>
+</body>
+</html>
